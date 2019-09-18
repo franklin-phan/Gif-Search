@@ -41,5 +41,20 @@ def index():
     
     return render_template("index.html", gifs = gifs)
 
+@app.route('/trending')
+def trending():
+    #parameters dictionary for trending
+    params = {
+        "key": 'JWEOV1L8X0N2',
+        'limit': 9
+        }
+    #gets trending gifs
+    r = requests.get("https://api.tenor.com/v1/trending", params)
+    if r.status_code == 200:
+        gifs = json.loads(r.content)['results']
+    else:
+        gifs = None
+    #returns trending to index.html and gifs
+    return render_template('index.html', gifs = gifs)
 if __name__ == '__main__':
     app.run(debug=True)
