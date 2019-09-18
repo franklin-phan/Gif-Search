@@ -56,5 +56,21 @@ def trending():
         gifs = None
     #returns trending to index.html and gifs
     return render_template('index.html', gifs = gifs)
+
+@app.route('/random')
+def random():
+    #parameters dictionary for trending
+    params = {
+        "key": 'JWEOV1L8X0N2',
+        'limit': 9
+        }
+    #gets trending gifs
+    r = requests.get("https://api.tenor.com</v1/random", params)
+    if r.status_code == 200:
+        gifs = json.loads(r.content)['results']
+    else:
+        gifs = None
+    #returns random to index.html and gifs
+    return render_template('index.html', gifs = gifs)
 if __name__ == '__main__':
     app.run(debug=True)
