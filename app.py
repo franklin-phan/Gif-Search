@@ -61,8 +61,9 @@ def trending():
 def random():
     #parameters dictionary for trending
     params = {
-        "key": 'JWEOV1L8X0N2',
-        'limit': 9
+        "q": query,
+        "key": apikey,
+        'limit': lmt
         }
     #gets trending gifs
     r = requests.get("https://api.tenor.com</v1/random", params)
