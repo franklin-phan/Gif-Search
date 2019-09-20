@@ -1,7 +1,6 @@
 <!-- templates/index.html -->
 {% extends 'base.html' %}
 {% block body %}
-<link rel="stylesheet" href=styles.css>
 
 {% block title %}
 <center><font size=+7><h1>GIF Search</h1></font></center>
@@ -24,23 +23,14 @@
                 </button>
             </a>
             
-            </form>
             </div>
 <!-- button styling: size-->
-            <style>
-                    #button{
-                    width: 200px;
-                    height: 40px;
-                    display:inline-block;
-                    }
-                </style>
-            <form action = '/trending'>
-            <button type="submit"id=button>Trending GIFS</button>
-            </form>
 
-            <form action = '/random'>
-            <button type="submit"id=button>Random GIFS</button>
-            </form>
+            <button type="submit" id=button formaction = '/trending'>Trending GIFS</button>
+
+            <button type="submit"id="button" name="query" formaction = '/random'  >Random GIFS</button>
+        </form>
+
     </center>      
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
@@ -48,15 +38,7 @@
 
 <!--Gifs are displayed in a grid-->
 <div class="grid">
-  <style>
-        .row {
-            display: flex;
-          }
-          .column {
-            flex: 33.33%;
-            padding: 0px;
-          }
-  </style>
+
   <center>
             <div class="row">
                     <div class="column">

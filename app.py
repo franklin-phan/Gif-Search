@@ -60,19 +60,21 @@ def trending():
 @app.route('/random')
 def random():
     #parameters dictionary for trending
+    query = request.args.get('query')
+
     params = {
         "q": query,
-        "key": apikey,
-        'limit': lmt
+        "key": 'JWEOV1L8X0N2',
+        'limit': 9
         }
     #gets trending gifs
-    r = requests.get("https://api.tenor.com</v1/random", params)
+    r = requests.get("https://api.tenor.com/v1/random?", params)
     if r.status_code == 200:
         gifs = json.loads(r.content)['results']
     else:
         gifs = None
     #returns random to index.html and gifs
-    return render_template('index.html', gifs = gifs)
+    return render_template('index.html', gifs = gifs, query=query)
 
 
 if __name__ == '__main__':

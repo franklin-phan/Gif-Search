@@ -4,34 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>GIF Search</title>
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
    <!--Search button icon from Font Awesome-->
     <script src="https://kit.fontawesome.com/60f2b4a655.js"></script>
 </head>
 <body>
-   <style>
-                body {
-                  background: url("https://img.wallpapersafari.com/desktop/1280/1024/67/22/CAl5sL.jpg") repeat;
-                }
-                #banner {
-                  position: absolute;
-                  top: 0px;
-                  left: 0px;
-                  right: 0px;
-                  width: 100%;
-                  height: 200px;
-                  z-index: -1;
-                }
-              
-                 
-        body{
-            background-image: url(http://www.brandgradients.com/img/backgrounds/instagram-hex-colors-gradient-background.png);
 
-        }
-    </style> 
     <!-- TODO: Make a block 'body' so that the homepage can extend base -->
     {% block body %}
-    {% endblock %}git
+    {% endblock %}
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately 
         (note: this script is required, so do not modify/remove it) -->
          <img id="banner" src="https://img.wallpapersafari.com/desktop/1280/1024/67/22/CAl5sL.jpg" alt="Banner Image"/>
