@@ -4,7 +4,7 @@
 <link rel="stylesheet" href=../static/style/styles.css>
 
 {% block title %}
-<h1>GIF Search</h1>
+<center><h1>GIF Search</h1></center>
 {% endblock %}
 
 
@@ -13,6 +13,7 @@
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string. The form should have a target of '/' to
     send us to the same route. -->
+   <center>
     <div class = "search-box">
             <form action = '/'>
             <input class="search-txt" name="query" type="query" placeholder="Type to Search for GIFs"/>
@@ -32,16 +33,18 @@
             <form action = '/random'>
             <button type="submit">Random GIFS</button>
             </form>
-            
+    </center>      
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
 <div class="grid">
+    <center>
         <!-- Make a for loop to loop over GIFs passed in from the server -->
         {% for gif in gifs %}
             <!-- For each gif, include the 'gif.html' template to display it -->
             {% include  'gif.html' %}
         {% endfor %}
+    </center>
     </div>
     {% if gifs|length == 0 %}
         <h1>No GIFs could be found, and to try another search query!</h1>
