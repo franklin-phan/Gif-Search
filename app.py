@@ -28,17 +28,17 @@ def index():
     # TODO: Use the '.json()' function to get the JSON of the returned response
     # object
     r = requests.get("https://api.tenor.com/v1/search", params)
-    
+
     # TODO: Using dictionary notation, get the 'results' field of the JSON,
     # which contains the GIFs as a list
     if r.status_code == 200:
         gifs = json.loads(r.content)['results']
     else:
         gifs = None
-    
+
     # TODO: Render the 'index.html' template, passing the list of gifs as a
     # named parameter called 'gifs'
-    
+
     return render_template("index.html", gifs = gifs)
 
 @app.route('/trending')
@@ -76,3 +76,5 @@ def random():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+#spaghetti
