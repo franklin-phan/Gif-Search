@@ -2,7 +2,13 @@
 
 
 <!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+{% extends 'base.html' %}
+{% block body %}
+<link rel="stylesheet" href=../static/style/styles.css>
 
+{% block title %}
+<h1>GIF Search</h1>
+{% endblock %}
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string. The form should have a target of '/' to
     send us to the same route. -->
