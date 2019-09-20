@@ -3,13 +3,16 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
     <title>GIF Search</title>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+    <script src="https://kit.fontawesome.com/60f2b4a655.js"></script>
 </head>
 <body>
 
     <!-- TODO: Make a block 'body' so that the homepage can extend base -->
+    {% block body %}
 
+    {% endblock %}git
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately 
         (note: this script is required, so do not modify/remove it) -->
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
