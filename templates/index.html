@@ -1,7 +1,4 @@
 <!-- templates/index.html -->
-
-
-<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
 {% extends 'base.html' %}
 {% block body %}
 <link rel="stylesheet" href=../static/style/styles.css>
@@ -9,10 +6,34 @@
 {% block title %}
 <h1>GIF Search</h1>
 {% endblock %}
+
+
+<!-- TODO: Extend 'base.html' and put content into a block 'body' to match -->
+
 <!-- TODO: Make an HTML form containing a search box and a submit button to add
     the search term to the query string. The form should have a target of '/' to
     send us to the same route. -->
+    <div class = "search-box">
+            <form action = '/'>
+            <input class="search-txt" name="query" type="query" placeholder="Type to Search for GIFs"/>
+            <a class= "search-btn" href="#">
+                <!--search button icon from https://fontawesome.com/ -->
+                <button input class="search-btn" type="submit">
+                <i class="fas fa-search"></i>
+                </button>
+            </a>
+            
+            </form>
+            </div>
+            
+            <form action = '/trending'>
+            <button type="submit">Trending GIFS</button>
+            </form>
 
+            <form action = '/random'>
+            <button type="submit">Random GIFS</button>
+            </form>
+            
 <!-- TODO: Make a for loop to loop over GIFs passed in from the server -->
 
 <!-- TODO: For each gif, include the 'gif.html' template to display it -->
