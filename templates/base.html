@@ -10,7 +10,20 @@
 </head>
 <body>
    <style>
-       
+                body {
+                  background: url("https://img.wallpapersafari.com/desktop/1280/1024/67/22/CAl5sL.jpg") repeat;
+                }
+                #banner {
+                  position: absolute;
+                  top: 0px;
+                  left: 0px;
+                  right: 0px;
+                  width: 100%;
+                  height: 200px;
+                  z-index: -1;
+                }
+              
+                 
         body{
             background-image: url(https://previews.123rf.com/images/tonsofbackgrounds/tonsofbackgrounds1707/tonsofbackgrounds170700265/82571059-rrandom-paint-splatter-effect-background-texture-with-blue-green-colors-design-in-high-resolution-fo.jpg);
 
@@ -21,6 +34,8 @@
     {% endblock %}git
     <!-- Include the Tenor JavaScript to fill in GIFs appropriately 
         (note: this script is required, so do not modify/remove it) -->
+         <img id="banner" src="https://img.wallpapersafari.com/desktop/1280/1024/67/22/CAl5sL.jpg" alt="Banner Image"/>
+           
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 </body>
 </html>
