@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request
 import requests
 import json
+import os
 
+from dotenv import load_dotenv
+load_dotenv()
+TENOR_API_KEY = os.getenv("TENOR_API_KEY")
 app = Flask(__name__)
 
 @app.route('/')
@@ -13,7 +17,7 @@ def index():
     # a) the query term, 'q'
     query = request.args.get('query')
     # b) your API key, 'key'
-    apikey = "JWEOV1L8X0N2"
+    apikey = TENOR_API_KEY
 
     # c) how many GIFs to return, 'limit'
     lmt = 9
@@ -45,7 +49,7 @@ def index():
 def trending():
     #parameters dictionary for trending
     params = {
-        "key": 'JWEOV1L8X0N2',
+        "key": TENOR_API_KEY,
         'limit': 9
         }
     #gets trending gifs
@@ -64,7 +68,7 @@ def random():
 
     params = {
         "q": query,
-        "key": 'JWEOV1L8X0N2',
+        "key": TENOR_API_KEY,
         'limit': 9
         }
     #gets trending gifs
